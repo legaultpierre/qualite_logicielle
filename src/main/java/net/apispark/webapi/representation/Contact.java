@@ -33,7 +33,7 @@ public class Contact implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.avatar = avatar;
-        this.gender = "Non available";
+        this.gender = "N/A";
     }
 
     public String getId() {
