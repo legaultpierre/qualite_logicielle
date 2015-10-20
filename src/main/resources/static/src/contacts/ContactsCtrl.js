@@ -9,6 +9,11 @@ angular.module('starterApp')
                                         NotificationsService) {
 
     var self = this;
+    self.genders = [
+                    { label: 'Male', value: 'M' },
+                    { label: 'Woman', value: 'F' },
+                    { label: 'Non Available', value: 'N/A' }
+    ];
 
     self.avatars = [
       { label: 'Woman (1)', value: 'svg-6' },
@@ -81,7 +86,8 @@ angular.module('starterApp')
       ctrl.copyContact = {
         firstName: '',
         lastName: '',
-        avatar: ''
+        avatar: '',
+        gender: ''
       };
 
       $mdSidenav('left').close();
@@ -103,7 +109,7 @@ angular.module('starterApp')
     CopyService.prototype.copy = function () {
       var self = this;
 
-      _.each('firstName lastName avatar'.split(' '), function (key) {
+      _.each('firstName lastName avatar gender'.split(' '), function (key) {
         self.dest[ key ] = self.source[ key ];
       });
     }
